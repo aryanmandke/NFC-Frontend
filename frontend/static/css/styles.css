@@ -1,0 +1,107 @@
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #D3F1DF; /* Light greenish background */
+    color: #5A6C57; /* Darker green text for readability */
+    line-height: 1.6;
+}
+
+/* Centering the content */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Header Styling */
+header {
+    background-color: #85A98F; /* Lighter olive green for header */
+    color: white;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Error message styling */
+h1 {
+    font-size: 2rem;
+    color: #525B44; /* Darker green for error messages */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Paragraph styling for error details */
+p {
+    font-size: 1rem;
+    color: #5A6C57; /* Matching green for details */
+    text-align: center;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+/* Styling for the back link */
+a {
+    color: #85A98F; /* Greenish accent color */
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #5A6C57; /* Slightly darker green for hover effect */
+}
+
+/* Button styling */
+button, .button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #85A98F; /* Olive green background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .button:hover {
+    background-color: #5A6C57; /* Darker green for hover effect */
+}
+
+button:disabled, .button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Responsive design improvements */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    header {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    a {
+        font-size: 0.9rem;
+    }
+}

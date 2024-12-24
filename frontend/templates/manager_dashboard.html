@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Manager Dashboard{% endblock %}
+
+{% block content %}
+<section>
+    <h2>Assigned Tasks</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Task ID</th>
+                <th>Data File</th>
+                <th>Status</th>
+                <th>Review</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in tasks %}
+            <tr>
+                <td>{{ task.id }}</td>
+                <td>{{ task.file_name }}</td>
+                <td class="{{ task.status|lower }}">{{ task.status }}</td>
+                <td>
+                    <a href="/task/{{ task.id }}/review">Review</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}

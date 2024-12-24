@@ -1,0 +1,22 @@
+<!-- error.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <!-- Linking CSS file -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Error</h1>
+        </header>
+        <p>{{ message }}</p>
+        <a href="/">Go back to the homepage</a>
+    </div>
+</body>
+</html>

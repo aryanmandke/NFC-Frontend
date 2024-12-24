@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Superuser Dashboard{% endblock %}
+
+{% block content %}
+<section>
+    <h2>Manager Status</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Manager Name</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for manager in managers %}
+            <tr>
+                <td>{{ manager.name }}</td>
+                <td class="{{ manager.status|lower }}">{{ manager.status }}</td>
+                <td>
+                    {% if manager.status == "Ready to Work" %}
+                    <button class="assign-btn" onclick="assignTask('{{ manager.id }}')">Assign Work</button>
+                    {% else %}
+                    <button class="disabled" disabled>Unavailable</button>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+
+<section>
+    <h2>Assign Data to Manager</h2>
+    <form action="/assign-task/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="manager">Select Manager:</label>
+        <select name="manager" id="manager">
+            {% for manager in managers %}
+                <option value="{{ manager.id }}">{{ manager.name }}</option>
+            {% endfor %}
+        </select>
+    
+        <label for="data">Upload Data File (CSV/XLSX):</label>
+        <input type="file" name="data" id="data" accept=".csv, .xlsx">
+    
+        <button type="submit">Assign Task</button>
+    </form>
+    
+</section>
+{% endblock %}

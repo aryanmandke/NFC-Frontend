@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Assign Task to Manager</h2>
+
+  <form method="POST">
+    {% csrf_token %}
+    <label for="manager">Select Manager:</label>
+    <select name="manager" id="manager">
+      <!-- This is where you would dynamically load manager options, for now using example values -->
+      <option value="Manager 1">Manager 1</option>
+      <option value="Manager 2">Manager 2</option>
+      <option value="Manager 3">Manager 3</option>
+    </select>
+
+    <label for="task">Task:</label>
+    <input type="text" name="task" id="task" required>
+
+    <button type="submit">Assign Task</button>
+  </form>
+{% endblock %}
